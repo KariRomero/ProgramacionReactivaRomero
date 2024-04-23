@@ -1,0 +1,19 @@
+<div 
+class="w-100 vh-100 bg-warning bg-gradient d-flex justify-content-center align-items-center"
+*ngIf="pokemon$ | async as pokemon"
+>
+  <div class="text-center">
+    <img 
+    [src]="pokemon.sprites.front_shiny" 
+    alt=""
+    class="w-50 h-50 rounded-circle shadow"   
+    >
+    <div class="p-4">
+      <h1>{{ pokemon.name | uppercase}}</h1>
+      <p>Sus habilidades | {{ pokemon.abilities }}</p>
+      <p>Su altura | {{ pokemon.height }}</p>
+      <p>Su peso | {{ pokemon.weight }}</p>
+    </div>
+    <button type="button" class="btn btn-secondary" (click)="loadRandomPokemon()">Yo te elijo!</button>
+  </div>
+</div>
